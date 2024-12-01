@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>고양이 가라사대</title>
-  </head>
-  <style>
-    body {
-      text-align: center;
-    }
-    .main-card button {
-      position: relative;
-      left: -45px;
-      bottom: 15px;
-    }
-    .favorites {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-  </style>
-  <body>
-    <div id="app"></div>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      const jsonLocalStorage = {
+import React from 'react';
+import './App.css';
+import Title from './components/Title';
+
+const jsonLocalStorage = {
   setItem: (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
     },
@@ -74,9 +47,7 @@
     </div>
         )
       }
-      const Title = (props) => {
-        return <h1>{props.children}</h1>
-      }
+
 
       const Form = ({updateMainCat}) => { 
         const includesHangul = (text) => /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/i.test(text);
@@ -166,10 +137,5 @@
         </div>
         )
       }
-    
-      
-      const 여기다가그려 = document.querySelector("#app")
-      ReactDOM.createRoot(여기다가그려).render(<App/>);
-    </script>
-  </body>
-</html>
+
+export default App;
